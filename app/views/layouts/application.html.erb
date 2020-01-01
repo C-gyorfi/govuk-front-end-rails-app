@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="govuk-template ">
   <head>
-    <title>GOV.UK Rails Boilerplate</title>
+    <title>Service</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= canonical_tag %>
@@ -41,7 +41,7 @@
           <% end %>
         </div>
         <div class="govuk-header__content">
-          <%= link_to "GOV.UK Rails Boilerplate", "/pages/home", class: "govuk-header__link govuk-header__link--service-name" %>
+          <%= link_to "Some service", "/pages/home", class: "govuk-header__link govuk-header__link--service-name" %>
           <button type="button" role="button" data-module="govuk-button" class="govuk-header__menu-button js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
           <nav>
             <ul id="navigation" class="govuk-header__navigation " aria-label="Top Level Navigation">
@@ -49,7 +49,7 @@
                 <%= link_to "Login", "#", class: "govuk-header__link" %>
               </li>
               <li class="govuk-header__navigation-item">
-                <%= link_to "Register", "#", class: "govuk-header__link" %>
+                <%= link_to "Register", new_user_path, class: "govuk-header__link" %>
               </li>
             </ul>
           </nav>

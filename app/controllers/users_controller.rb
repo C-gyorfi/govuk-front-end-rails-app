@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
       redirect_to '/users/success.html'  
     else
-      redirect_to :new
+      render :new
     end
   end
 

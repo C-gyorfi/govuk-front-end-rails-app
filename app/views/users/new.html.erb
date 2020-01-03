@@ -2,6 +2,7 @@
   <div class="govuk-grid-column-two-thirds">
 
   <%= form_with model: @user, url: create_user_path, builder: GOVUKDesignSystemFormBuilder::FormBuilder, method: :post do |f| %>
+    <%= f.govuk_error_summary %>
     <h1 class="govuk-heading-xl">
       Register a new user
     </h1>

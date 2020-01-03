@@ -7,6 +7,10 @@ RSpec.feature 'User account registration' do
     and_i_click_on_the_registration_tab
     then_i_can_see_the_registration_page
 
+    when_i_fill_up_the_form_by_omitting_fields
+    and_i_click_on_the_registration
+    the_i_can_see_field_errors
+
     when_i_fill_up_the_form
     and_i_click_on_the_registration
     the_i_can_see_the_success_page
@@ -25,6 +29,15 @@ RSpec.feature 'User account registration' do
     expect(page).to have_content('Username')
     expect(page).to have_content('Phone number')
     expect(page).to have_content('Date of Birth')
+  end
+
+  def when_i_fill_up_the_form_by_omitting_fields
+    fill_in 'Date of Birth', with: '12/12/1212'
+  end
+
+  def the_i_can_see_field_errors
+    expect(page).to have_content("Enter a user name")
+    expect(page).to have_content("Enter a phone number")
   end
 
   def when_i_fill_up_the_form

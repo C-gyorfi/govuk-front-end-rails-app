@@ -40,3 +40,12 @@ en:
               blank: Enter a user name
             phone:
               blank: Enter a phone number
+  activemodel:
+    errors:
+      models:
+        user_registration_form:
+          attributes:
+            name:
+              blank: Enter a user name
+            phone:
+              blank: Enter a phone number

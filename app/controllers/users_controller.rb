@@ -1,16 +1,18 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new
+    @registration = UserRegistrationForm.new
   end
 
   def create
-    @user = User.new(
-      name: params[:user][:name],
-      phone: params[:user][:phone],
-      dob: DateTime.parse(params[:user][:dob])
-    ) 
+    @registration = UserRegistrationForm.new(
+      { 
+        name: params[:user_registration_form][:name],
+        phone: params[:user_registration_form][:phone],
+        dob: DateTime.parse(params[:user_registration_form][:dob])
+      }
+    )
 
-    if @user.save
+    if @registration.save
       flash[:success] = 'Support user created'
 
       redirect_to '/users/success.html'  
@@ -18,8 +20,4 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-  # def success
-  #   redirect_to 'users/success.html'    
-  # end
 end

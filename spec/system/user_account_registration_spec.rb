@@ -14,6 +14,11 @@ RSpec.feature 'User account registration' do
     when_i_fill_up_the_form
     and_i_click_on_the_registration
     the_i_can_see_the_success_page
+
+    when_i_attempt_to_register_with_the_same_user_name
+    and_i_click_on_the_registration
+    the_i_can_see_the_name_already_taken
+    and_phone_number_is_already_taken
   end
 
   def when_i_visit_the_root_page
@@ -52,5 +57,18 @@ RSpec.feature 'User account registration' do
 
   def the_i_can_see_the_success_page
     expect(page).to have_content('SUCCESSS')
+  end
+
+  def when_i_attempt_to_register_with_the_same_user_name
+    and_i_click_on_the_registration_tab
+    when_i_fill_up_the_form
+  end
+
+  def the_i_can_see_the_name_already_taken
+    expect(page).to have_content('Name has already taken')
+  end
+
+  def and_phone_number_is_already_taken
+    expect(page).to have_content('Phone has already taken')
   end
 end

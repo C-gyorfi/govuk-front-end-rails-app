@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       { 
         name: params[:user_registration_form][:name],
         phone: params[:user_registration_form][:phone],
-        dob: DateTime.parse(params[:user_registration_form][:dob])
+        dob: params[:user_registration_form][:dob]
       }
     )
 
